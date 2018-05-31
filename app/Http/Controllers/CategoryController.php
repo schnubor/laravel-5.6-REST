@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Request;
+use Illuminate\Http\Request;
 use App\Category;
 
 class CategoryController extends Controller
@@ -37,7 +37,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $input = Request::all();
+        $input = $request->all();
         Category::create($input);
 
         return redirect('categories');
@@ -78,7 +78,7 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $category = Category::findOrFail($id);
-        $input = Request::all();
+        $input = $request->all();
         $category->update($input);
         return redirect('categories');
     }

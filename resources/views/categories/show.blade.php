@@ -29,7 +29,6 @@
                         <th scope="col">Kurztext</th>
                         <th scope="col">Profil</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Kategorie ID</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -43,7 +42,6 @@
                             <td>{{$client->kurztext}}</td>
                             <td>{{$client->profil}}</td>
                             <td>{{$client->status}}</td>
-                            <td>{{$client->category_id}}</td>
                             <td>
                                 <a class="btn btn-primary btn-sm" href="{{ route('clients.edit', $client->id)}}">Edit</a>
                                 {!! Form::open(['route' => ['clients.destroy', $client->id], 'onsubmit' => 'return confirm(\'Sicher, dass Sie diesen Kunde löschen möchten?\')', 'style' => 'display: inline;']) !!}

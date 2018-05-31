@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Request;
+use Illuminate\Http\Request;
 use App\Category;
 use App\Client;
 
@@ -44,7 +44,8 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $input = Request::all();
+        $input = $request->all();
+        $input['status'] = $request->has('status');
         Client::create($input);
 
         return redirect('clients');
@@ -93,7 +94,8 @@ class ClientController extends Controller
     public function update(Request $request, $id)
     {
         $client = Client::findOrFail($id);
-        $input = Request::all();
+        $input = $request->all();
+        $input['status'] = $request->has('status');
         $client->update($input);
         return redirect('clients');
     }
