@@ -5,7 +5,8 @@ So bringst du es zum laufen:
 - PHP composer wird benötigt https://getcomposer.org/
 - lokale MySQL Datenbank starten
 - neue DB anlegen
-- in der `.env` folgende Einträge an die lokale DB anpassen:
+- `.env.example` Datei duplizieren und in `.env` umbennen
+- in der `.env` folgende Einträge an die lokale MySQL Datenbank anpassen (Datenbankname kann frei gewählt werden):
 ```
     DB_HOST=127.0.0.1
     DB_PORT=3306
